@@ -10,14 +10,15 @@ namespace WebApplication1.Controllers
     public class HomeController : Controller
     {
         private IUnitofWork _repo;
-        public HomeController(UnitofWork _repo)
+        public HomeController(IUnitofWork _repo)
         {
             this._repo = _repo;
         }
         public ActionResult Index()
         {
+            var modal = _repo.Repository.GetAllModal(1);
 
-            return View();
+            return View(modal);
         }
 
         public ActionResult About()

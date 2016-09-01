@@ -8,7 +8,7 @@ namespace ClassLibrary2
 {
     public class Repository : IRepository
     {
-        public List<Modal> GetAllModal()
+        public List<Modal> GetAllModal(int all)
         {
             return new List<Modal>() {
                 new Modal {ID=1,Name="pankaj",Desc="dhami" },
@@ -21,7 +21,7 @@ namespace ClassLibrary2
 
         public Modal GetModal(Func<Modal, bool> predicate)
         {
-            return GetAllModal().FirstOrDefault(predicate);
+            return GetAllModal(1).FirstOrDefault(predicate);
         }
     }
 }

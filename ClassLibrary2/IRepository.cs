@@ -8,7 +8,7 @@ namespace ClassLibrary2
 {
     public interface IRepository
     {
-        List<Modal> GetAllModal();
+        List<Modal> GetAllModal(int all);
 
         Modal GetModal(Func<Modal, bool> predicate);
 
